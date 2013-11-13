@@ -26,12 +26,11 @@
     "cryptocoin-bigint": "0.0.x",
     "cryptocoin-ecc": "0.0.x",
     "cryptocoin-ecc-named": "0.0.x",
-    "secure-random": "0.0.x",
-    "cryptocoin-base58": "0.0.1",
-    "cryptocoin-sha256": "0.0.2",
-    "cryptocoin-ripemd160": "0.0.2",
-    "cryptocoin-convert-hex": "0.0.1",
-    "cryptocoin-address-btc": "0.0.1",
-    "cryptocoin-ecdsa": "0.0.1"
+    "cryptocoin-base58": "0.0.x",
+    "cryptocoin-sha256": "0.0.x",
+    "cryptocoin-ripemd160": "0.0.x",
+    "cryptocoin-convert-hex": "0.0.x",
+    "cryptocoin-address-btc": "0.0.x",
+    "cryptocoin-ecdsa": "0.0.x"
   }
 }
