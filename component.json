@@ -1,0 +1,27 @@
+{
+  "name": "eckey",
+  "version": "0.0.0",
+  "description": "Eliptical curve cryptography for crypto currencies such as Litecoin and Bitcoin",
+  "keywords": [
+    "cryptography",
+    "crypto",
+    "bitcoin",
+    "litecoin",
+    "eliptical",
+    "curve",
+    "digital",
+    "sign",
+    "signing"
+  ],
+  "repo": "cryptocoinjs/eckey",
+  "scripts": [
+    "./lib/eckey.js"
+  ],
+  "main": "./lib/eckey.js",
+  "dependencies": {
+    "cryptocoinjs/bigint": "0.0.x",
+    "cryptocoinjs/ecc": "0.0.x",
+    "cryptocoinjs/ecc-named": "0.0.x",
+    "secure-random": "0.0.x"
+  }
+}
