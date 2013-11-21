@@ -1,5 +1,5 @@
 var ECKey = require('../lib/eckey')
-  , conv = require('cryptocoin-convert-hex')
+  , conv = require('convert-hex')
 
 console.dir(ECKey)
 
