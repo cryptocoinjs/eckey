@@ -20,15 +20,15 @@
     "package.json"
   ],
   "dependencies": {
-    "cryptocoin-bigint": "0.0.x",
-    "cryptocoin-ecc": "0.0.x",
-    "cryptocoin-ecc-named": "0.0.x",
-    "cryptocoin-base58": "0.0.x",
-    "cryptocoin-sha256": "0.0.x",
-    "cryptocoin-ripemd160": "0.0.x",
-    "cryptocoin-convert-hex": "0.0.x",
-    "cryptocoin-address-btc": "0.0.x",
-    "cryptocoin-ecdsa": "0.0.x"
+    "cryptocoin-bigint": "0.1.x",
+    "ecurve": "0.1.x",
+    "ecurve-names": "0.1.x",
+    "cryptocoin-base58": "0.1.x",
+    "sha256": "0.1.x",
+    "ripemd160": "0.1.x",
+    "convert-hex": "0.1.x",
+    "address": "0.1.x",
+    "ecdsa": "0.1.x"
   },
   "repo": "https://github.com/cryptocoinjs/eckey",
   "main": "./lib/eckey.js"
