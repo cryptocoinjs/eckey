@@ -1,13 +1,13 @@
 {
-  "name": "cryptocoin-eckey",
+  "name": "eckey",
   "version": "0.0.1",
-  "description": "Eliptical curve cryptography for crypto currencies such as Litecoin and Bitcoin",
+  "description": "Elliptical curve cryptography for crypto currencies such as Litecoin and Bitcoin",
   "keywords": [
     "cryptography",
     "crypto",
     "bitcoin",
     "litecoin",
-    "eliptical",
+    "elliptical",
     "curve",
     "digital",
     "sign",

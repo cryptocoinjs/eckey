@@ -1,9 +1,8 @@
 eckey
 =====
 
-JavaScript component for Eliptical curve cryptography for crypto currencies such as Litecoin and Bitcoin.
+JavaScript component for Elliptical curve cryptography for crypto currencies such as Litecoin and Bitcoin.
 
-AMD/CommonJS compatible.
 
 See this article for more details: [bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript).
 
@@ -14,7 +13,7 @@ Install
 
 ### Node.js/Browserify
 
-    npm install --save cryptocoin-eckey
+    npm install --save eckey
 
 ### Component
 
@@ -23,7 +22,7 @@ Install
 
 ### Bower
 
-    bower install cryptocoin-eckey
+    bower install eckey
 
 
 ### Script
