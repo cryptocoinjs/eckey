@@ -1,3 +1,7 @@
+0.2.0 / 2013-12-07
+------------------
+* added `recoverPubKey()` from package `ecdsa`
+
 0.1.1 / 2013-12-05
 ------------------
 * typo in `toString()` method. Closes #1
