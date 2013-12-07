@@ -1,6 +1,7 @@
 0.2.0 / 2013-12-07
 ------------------
 * added `recoverPubKey()` from package `ecdsa`
+* updated to `ecdsa` `0.2.0`
 
 0.1.1 / 2013-12-05
 ------------------

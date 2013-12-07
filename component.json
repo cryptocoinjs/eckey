@@ -27,6 +27,6 @@
     "cryptocoin/ripemd160": "0.1.x",
     "cryptocoin/convert-hex": "0.1.x",
     "cryptocoin/btc-address": "0.1.x",
-    "cryptocoin/ecdsa": "0.1.x"
+    "cryptocoin/ecdsa": "0.2.x"
   }
 }

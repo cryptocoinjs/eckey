@@ -28,7 +28,7 @@
     "ripemd160": "0.1.x",
     "convert-hex": "0.1.x",
     "address": "0.1.x",
-    "ecdsa": "0.1.x"
+    "ecdsa": "0.2.x"
   },
   "repo": "https://github.com/cryptocoinjs/eckey",
   "main": "./lib/eckey.js"

@@ -31,6 +31,6 @@
     "ripemd160": "0.1.x",
     "convert-hex": "0.1.x",
     "btc-address": "0.1.x",
-    "ecdsa": "0.1.x"
+    "ecdsa": "0.2.x"
   }
 }
