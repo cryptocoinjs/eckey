@@ -39,7 +39,7 @@ describe('ECKey', function() {
     })
 
     describe('> when compressed', function() {
-      it('shoudl generate the address of the compressed public key', function() {
+      it('should generate the address of the compressed public key', function() {
          var privateKeyBytes = conv.hexToBytes("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD")
         var eckey = new ECKey(privateKeyBytes)
         eckey.compressed = true
@@ -58,11 +58,21 @@ describe('ECKey', function() {
       EQ (s, '1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd')
     })
   })
-})
 
-
-
-
-
-
-
+  describe('- getExportedPrivateKey()', function() {
+    describe('> when private key is uncompressed', function() {
+      it('should return uncompressed private key', function() {
+        var priv_uncompressed = '5HwoXVkHoRM8sL2KmNRS217n1g8mPPBomrY7yehCuXC1115WWsh';
+        var eckey = new ECKey(priv_uncompressed);
+        EQ(eckey.getExportedPrivateKey(), priv_uncompressed);
+      });
+    });
+    describe('> when private key is compressed', function() {
+      it('should return compressed private key', function() {
+        var priv_compressed = 'KwntMbt59tTsj8xqpqYqRRWufyjGunvhSyeMo3NTYpFYzZbXJ5Hp';
+        var eckey = new ECKey(priv_compressed);
+        EQ(eckey.getExportedPrivateKey(), priv_compressed);
+      });
+    });
+  });
+});
