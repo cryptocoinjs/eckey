@@ -37,8 +37,8 @@ Contributors (CryptoCoinJS)
 
 (if you contribute, add your name to the list and increment the number, if you're a member to the organization, just add your name with a `*`)
 
-- [*] [jprichardson](https://github.com/jprichardson)
-- [1] [remiq](https://github.com/remiq)
+- (*) [jprichardson](https://github.com/jprichardson)
+- (1) [remiq](https://github.com/remiq)
 
 
 
