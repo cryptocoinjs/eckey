@@ -19,10 +19,10 @@
   ],
   "main": "./lib/eckey.js",
   "dependencies": {
-    "cryptocoin/bigint": "0.1.x",
+    "cryptocoin/bigi": "0.2.x",
     "cryptocoin/ecurve": "0.1.x",
     "cryptocoin/ecurve-names": "0.1.x",
-    "cryptocoin/base58": "0.1.x",
+    "cryptocoin/bs58": "0.2.x",
     "cryptocoin/sha256": "0.1.x",
     "cryptocoin/ripemd160": "0.1.x",
     "cryptocoin/convert-hex": "0.1.x",

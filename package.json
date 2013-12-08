@@ -23,7 +23,6 @@
   },
   "main": "./lib/eckey.js",
   "dependencies": {
-    "cryptocoin-bigint": "0.1.x",
     "ecurve": "0.1.x",
     "ecurve-names": "0.1.x",
     "cryptocoin-base58": "0.1.x",
@@ -31,6 +30,8 @@
     "ripemd160": "0.1.x",
     "convert-hex": "0.1.x",
     "btc-address": "0.1.x",
-    "ecdsa": "0.2.x"
+    "ecdsa": "0.2.x",
+    "bigi": "~0.2.0",
+    "bs58": "~0.2.0"
   }
 }
