@@ -2,6 +2,8 @@
 ------------------
 * added `recoverPubKey()` from package `ecdsa`
 * updated to `ecdsa` `0.2.0`
+* [remiq](https://github.com/remiq) fixed `getExportedPrivateKey()`, see: https://github.com/cryptocoinjs/eckey/pull/2
+* updated name of deps: `bigi` and `bs58`
 
 0.1.1 / 2013-12-05
 ------------------
