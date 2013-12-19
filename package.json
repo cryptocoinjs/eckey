@@ -25,7 +25,6 @@
   "dependencies": {
     "ecurve": "0.1.x",
     "ecurve-names": "0.1.x",
-    "cryptocoin-base58": "0.1.x",
     "sha256": "0.1.x",
     "ripemd160": "0.1.x",
     "convert-hex": "0.1.x",
