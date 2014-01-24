@@ -1,6 +1,6 @@
 {
   "name": "eckey",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Elliptical curve cryptography for crypto currencies such as Litecoin and Bitcoin",
   "keywords": [
     "cryptography",
@@ -24,7 +24,7 @@
   "main": "./lib/eckey.js",
   "dependencies": {
     "ecurve": "0.2.x",
-    "ecurve-names": "0.1.x",
+    "ecurve-names": "0.2.x",
     "sha256": "0.1.x",
     "ripemd160": "0.1.x",
     "convert-hex": "0.1.x",

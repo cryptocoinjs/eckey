@@ -1,3 +1,7 @@
+0.2.1 / 2014-01-23
+------------------
+* Update dependency package names/versions
+
 0.2.0 / 2013-12-07
 ------------------
 * added `recoverPubKey()` from package `ecdsa`
