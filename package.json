@@ -23,14 +23,14 @@
   },
   "main": "./lib/eckey.js",
   "dependencies": {
-    "ecurve": "0.1.x",
+    "ecurve": "0.2.x",
     "ecurve-names": "0.1.x",
     "sha256": "0.1.x",
     "ripemd160": "0.1.x",
     "convert-hex": "0.1.x",
-    "btc-address": "0.1.x",
-    "ecdsa": "0.2.x",
-    "bigi": "~0.2.0",
-    "bs58": "~0.2.0"
+    "btc-address": "0.2.x",
+    "ecdsa": "0.3.x",
+    "bigi": "0.2.x",
+    "bs58": "0.2.x"
   }
 }
