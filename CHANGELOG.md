@@ -1,3 +1,8 @@
+0.3.0 / 2014-02-03
+------------------
+* Removed bower and component support. Closes #8
+* Upgraded version number so that `cryptocoin` could install. Changes in `0.2.1` could qualify for a `0.3.0`.
+
 0.2.1 / 2014-01-23
 ------------------
 * Update dependency package names/versions
