@@ -4,6 +4,7 @@ var ECKey = require('../lib/eckey')
 console.dir(ECKey)
 
 require('terst')
+var assert = require('assert')
 
 describe('ECKey', function() {
   describe('- getPub()', function() {
@@ -12,7 +13,7 @@ describe('ECKey', function() {
         var privateKeyBytes = conv.hexToBytes("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD")
         var eckey = new ECKey(privateKeyBytes)
         var publicKeyHex = conv.bytesToHex(eckey.getPub())
-        EQ (publicKeyHex, "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495") 
+        EQ (publicKeyHex, "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495")
       })
     })
 
@@ -23,7 +24,7 @@ describe('ECKey', function() {
         eckey.compressed = true
         var publicKeyHex = conv.bytesToHex(eckey.getPub())
         EQ (publicKeyHex, "03d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6f") //this feels wrong, extra '6f' on the end? investigate
-      
+
       })
     })
   })
@@ -75,4 +76,31 @@ describe('ECKey', function() {
       });
     });
   });
+
+  describe('- decodeString()', function() {
+    describe('> when private key is uncompressed', function() {
+      it('should throw an error if checksum of uncompressed key is bad', function() {
+        assert.throws(function() {
+          var eckey = new ECKey('5HwoXVkHoRM8sL2KmNRS217n1g8mPPBomrY7yehCuXC111kLqaW');
+        }, function(err) {
+          if (/Checksum validation failed/.test(err)) {
+            return true
+          }
+        });
+      });
+    })
+
+    describe('> when private key is uncompressed', function() {
+      it('should throw an error if checksum of compressed key is bad', function() {
+        assert.throws(function() {
+          var eckey = new ECKey('KwntMbt59tTsj8xqpqYqRRWufyjGunvhSyeMo3NTYpFYzZeDYahL');
+        }, function(err) {
+          if (/Checksum validation failed/.test(err)) {
+            return true
+          }
+        });
+      });
+    });
+  });
+
 });
