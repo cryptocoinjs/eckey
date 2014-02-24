@@ -1,3 +1,8 @@
+next release / 2014-02-??
+------------------
+* Dropped sha256 and ripemd160 deps. Upgraded to crypto-hashing library.
+* removed function wrapper
+
 0.3.0 / 2014-02-03
 ------------------
 * Removed bower and component support. Closes #8
