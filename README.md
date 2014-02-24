@@ -8,37 +8,14 @@ See this article for more details: [bitcoin address](http://procbits.com/2013/08
 
 
 
-Install
--------
+Usage
+-----
 
-### Node.js/Browserify
+### Installation
 
     npm install --save eckey
 
-### Component
 
-    component install cryptocoinjs/eckey
-
-
-### Bower
-
-    bower install eckey
-
-
-### Script
-
-```html
-<script src="/path/to/eckey.js"></script>
-```
-
-
-Contributors (CryptoCoinJS)
----------------------------
-
-(if you contribute, add your name to the list and increment the number, if you're a member to the organization, just add your name with a `*`)
-
-- (*) [jprichardson](https://github.com/jprichardson)
-- (1) [remiq](https://github.com/remiq)
 
 
 
