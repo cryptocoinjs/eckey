@@ -1,11 +1,56 @@
 var ECKey = require('../lib/eckey')
 var conv = require('binstring') 
-
+var secureRandom = require('secure-random')
 
 require('terst')
 var assert = require('assert')
 
 describe('ECKey', function() {
+  describe('+ ECKey()', function() {
+    describe('> when input is a Buffer', function() {
+      it('should create a new ECKey ', function() {
+        var bytes = secureRandom(32);
+        T (bytes instanceof Uint8Array);
+        F (Array.isArray(bytes));
+        bytes = [].slice.call(bytes);
+        T (Array.isArray(bytes));
+        var buf = new Buffer(bytes);
+
+        var key = new ECKey(buf);
+        EQ (key.privateKey.toString('hex'), conv(bytes, {out: 'hex'}));
+        EQ (key.compressed, false);
+      })
+    })
+
+    describe('> when input is an Uint8Array', function() {
+      it('should create a new ECKey ', function() {
+        var bytes = secureRandom(32);
+        T (bytes instanceof Uint8Array);
+
+        var key = new ECKey(bytes);
+        EQ (key.privateKey.toString('hex'), conv([].slice.call(bytes), {out: 'hex'}));
+        EQ (key.compressed, false);
+      })
+    })
+
+    describe('> when input is an Array', function() {
+      it('should create a new ECKey ', function() {
+        var bytes = secureRandom(32, {array: true});
+        T (Array.isArray(bytes));
+
+        var key = new ECKey(bytes);
+        EQ (key.privateKey.toString('hex'), conv(bytes, {out: 'hex'}));
+        EQ (key.compressed, false);
+      })
+    })
+
+    describe('> when compressed is true', function() {
+      var key = new ECKey(null, true);
+      T (key.compressed);
+    })
+  })
+
+
   describe('- getPub()', function() {
     describe('> when not compressed', function() {
       it('should generate the public key uncompressed', function() {
@@ -33,7 +78,7 @@ describe('ECKey', function() {
       it('should generate the address of the uncompressed public key', function() {
         var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
         var eckey = new ECKey(privateKeyBytes)
-        var address = eckey.getBitcoinAddress().toString()
+        var address = eckey.getAddress().toString()
         EQ (address, "16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS")
       })
     })
@@ -43,7 +88,7 @@ describe('ECKey', function() {
          var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
         var eckey = new ECKey(privateKeyBytes)
         eckey.compressed = true
-        var address = eckey.getBitcoinAddress().toString()
+        var address = eckey.getAddress().toString()
         EQ (address, "1FkKMsKNJqWSDvTvETqcCeHcUQQ64kSC6s")
       })
     })
