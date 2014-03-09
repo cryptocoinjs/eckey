@@ -157,7 +157,7 @@ describe('ECKey', function() {
   })
 
 
-  describe('> toString()', function() {
+  describe('- toString()', function() {
     it('should show the string representation in...', function() {
       var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
       var eckey = new ECKey(privateKeyBytes)

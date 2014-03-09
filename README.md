@@ -143,6 +143,20 @@ console.log(key.publKeyHash.toString('hex')) // => a1c2f92a9dacbd2991c3897724a93
 Get the [Public Key Point](https://github.com/cryptocoinjs/ecurve/blob/master/lib/ecurve.js) on the Ellipitical Curve. 
 
 
+#### toString()
+
+Returns the string representation of the private key.
+
+```js
+var ECKey = require('eckey');
+var conv = require('binstring');
+
+var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true);
+
+console.log(key.toString()) // => 1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd
+```
+
 
 
 References
