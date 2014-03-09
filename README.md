@@ -66,6 +66,7 @@ var keyCompressed = ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true)
 console.log(key.privatekey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd
 ```
 
+
 #### publicKey
 
 Get the public key. The type is `Buffer`.
@@ -87,8 +88,26 @@ console.log(key.publickey.toString('hex'));
 ```
 
 
+### publicHash
 
+Alias: `pubKeyHash`
 
+Get the public hash i.e. the ripemd160(sha256(publicKey))
+
+```js
+var ECKey = require('eckey');
+var conv = require('binstring');
+
+var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+
+var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), false);
+console.log(key.publicHash.toString('hex')) // => 3c176e659bea0f29a3e9bf7880c112b1b31b4dc8
+console.log(key.publKeyHash.toString('hex')) // => 3c176e659bea0f29a3e9bf7880c112b1b31b4dc8
+
+var keyCompressed = ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true);
+console.log(key.publicHash.toString('hex')) // => a1c2f92a9dacbd2991c3897724a93f338e44bdc1
+console.log(key.publKeyHash.toString('hex')) // => a1c2f92a9dacbd2991c3897724a93f338e44bdc1
+```
 
 
 

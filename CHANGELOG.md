@@ -4,6 +4,7 @@ next release / 2014-02-??
 * removed function wrapper
 * Changed the way the constuctor works. Only supports input types of `Array`, `Buffer`, or `Uint8Array`. Does NOT randomly generate a private key anymore.
 * added `publicKey` property
+* added `pubKeyHash`/`publicHash` property
 
 0.3.0 / 2014-02-03
 ------------------
