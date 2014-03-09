@@ -13,6 +13,7 @@ next release / 2014-02-??
 * removed `getExportedPrivateKey`, note that `getExportedPrivateKey` was essentially just a way to get WIF
 * removed `decodeString()`, use package [coinstring][coinstring] in its place
 * removed `getBitcoinAddress()`, use package [coinstring][coinstring] in its place
+* removed `setCompressed`, use `compressed` property instead
 
 0.3.0 / 2014-02-03
 ------------------
