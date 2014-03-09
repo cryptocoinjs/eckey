@@ -7,6 +7,7 @@ next release / 2014-02-??
 * added `pubKeyHash`/`publicHash` property
 * added `publicPoint`, removed `getPubPoint()`
 * removed `getPub()`, use `publicKey` instead
+* removed `getPubKeyHash()`, use `publicHash` or `pubKeyHash` instead
 
 0.3.0 / 2014-02-03
 ------------------
