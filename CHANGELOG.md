@@ -10,6 +10,7 @@ next release / 2014-02-??
 * removed `getPubKeyHash()`, use `publicHash` or `pubKeyHash` instead
 * removed `sign()` and `verify()`, methods can be accessed from [ecdsa](https://github.com/cryptocoinjs/ecdsa)
 * added `privateExportKey` 
+* removed `getExportedPrivateKey`, note that `getExportedPrivateKey` was essentially just a way to get WIF
 
 0.3.0 / 2014-02-03
 ------------------

@@ -166,23 +166,6 @@ describe('ECKey', function() {
     })
   })
 
-  describe('- getExportedPrivateKey()', function() {
-    describe('> when private key is uncompressed', function() {
-      it('should return uncompressed private key', function() {
-        var priv_uncompressed = '5HwoXVkHoRM8sL2KmNRS217n1g8mPPBomrY7yehCuXC1115WWsh';
-        var eckey = new ECKey(priv_uncompressed);
-        EQ(eckey.getExportedPrivateKey(), priv_uncompressed);
-      });
-    });
-    describe('> when private key is compressed', function() {
-      it('should return compressed private key', function() {
-        var priv_compressed = 'KwntMbt59tTsj8xqpqYqRRWufyjGunvhSyeMo3NTYpFYzZbXJ5Hp';
-        var eckey = new ECKey(priv_compressed);
-        EQ(eckey.getExportedPrivateKey(), priv_compressed);
-      });
-    });
-  });
-
   describe('- decodeString()', function() {
     describe('> when private key is uncompressed', function() {
       it('should throw an error if checksum of uncompressed key is bad', function() {
