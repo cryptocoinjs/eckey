@@ -116,28 +116,6 @@ describe('ECKey', function() {
   })
 
 
-  describe('- getPub()', function() {
-    describe('> when not compressed', function() {
-      it('should generate the public key uncompressed', function() {
-        var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
-        var eckey = new ECKey(privateKeyBytes)
-        var publicKeyHex = conv(eckey.getPub(), {in: 'bytes', out: 'hex'})
-        EQ (publicKeyHex, "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495")
-      })
-    })
-
-    describe('> when compressed', function() {
-      it('should generate the public key uncompressed', function() {
-        var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
-        var eckey = new ECKey(privateKeyBytes)
-        eckey.compressed = true
-        var publicKeyHex = conv(eckey.getPub(), {in: 'bytes', out: 'hex'})
-        EQ (publicKeyHex, "03d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6f") //this feels wrong, extra '6f' on the end? investigate
-
-      })
-    })
-  })
-
   describe('- getBitcoinAddress()', function() {
     describe('> when not compressed', function() {
       it('should generate the address of the uncompressed public key', function() {
