@@ -4,7 +4,7 @@ next release / 2014-02-??
 * removed function wrapper
 * Changed the way the constuctor works. Only supports input types of `Array`, `Buffer`, or `Uint8Array`. Does NOT randomly generate a private key anymore.
 * added `publicKey` property
-* added `pubKeyHash`/`publicHash` property
+* ~~added `pubKeyHash`/`publicHash` property~~
 * added `publicPoint`, removed `getPubPoint()`
 * removed `getPub()`, use `publicKey` instead
 * removed `getPubKeyHash()`, use `publicHash` or `pubKeyHash` instead
@@ -16,6 +16,8 @@ next release / 2014-02-??
 * removed `setCompressed`, use `compressed` property instead
 * removed deps: `ecdsa`, `convert-hex`, `btc-address`, `bs58`
 * updated deps: `ecurve` and `ecurve-names`
+* removed `pubKeyHash` property, removes dependency upon `crypto-hashing`
+* removed dep `crypto-hashing`
 
 0.3.0 / 2014-02-03
 ------------------

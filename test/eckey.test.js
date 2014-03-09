@@ -104,7 +104,7 @@ describe('ECKey', function() {
     })
   })
 
-  describe('- publicHash', function() {
+  /*describe('- publicHash', function() {
     describe('> when not compressed', function() {
       it('should return the 160 bit hash of the uncompressed public key', function() {
         var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
@@ -124,7 +124,7 @@ describe('ECKey', function() {
         EQ (key.pubKeyHash.toString('hex'), hash160Hex);
       })
     })
-  })
+  })*/
 
   describe('- publicPoint', function() {
     it('should return the point object', function() {

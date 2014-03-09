@@ -28,7 +28,6 @@
   "dependencies": {
     "ecurve": "~0.3.0",
     "ecurve-names": "~0.3.0",
-    "bigi": "0.2.x",
-    "crypto-hashing": "~0.2.0"
+    "bigi": "0.2.x"
   }
 }
