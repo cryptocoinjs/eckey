@@ -15,7 +15,9 @@
   ],
   "devDependencies": {
     "mocha": "1.*",
-    "terst": "0.0.1"
+    "terst": "~0.1.0",
+    "binstring": "~0.2.0",
+    "secure-random": "~0.2.0"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/eckey",
