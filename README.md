@@ -67,7 +67,7 @@ console.log(key.privatekey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d
 ```
 
 
-### privateExportKey
+#### privateExportKey
 
 Get the private key along with a byte for compression if `compressed` is true. i.e.
 
