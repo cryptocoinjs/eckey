@@ -42,22 +42,53 @@ var compressedKey = new ECKey(bytes, true);
 Note: Previous versions of this module would generate a random array of bytes for you if you didn't pass as input any to the constructor. This behavior has been removed to remove complexity and to ensure that the random generation is done securely. In the past, it wasn't.
 
 
+#### compressed
+
+Get/set whether the point on the curve is compressed. Affects the output of the WIF (wallet import format) and the address.
+
+
 #### privateKey
 
 Get/set the private key. When setting, the type can be either an `Array`, `Buffer`, or `Uint8Array`. When getting, the type is always `Buffer`. Setting would be useful if you don't pass a private key to the constructor.
 
+```js
+var ECKey = require('eckey');
+var conv = require('binstring');
+
+var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+
+var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), false);
+console.log(key.privatekey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd
+
+var keyCompressed = ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true);
+
+//nothing changes when compressed
+console.log(key.privatekey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd
+```
 
 #### publicKey
 
 Get the public key. The type is `Buffer`.
 
+```js
+var ECKey = require('eckey');
+var conv = require('binstring');
+
+var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+
+var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), false);
+console.log(key.publickey.toString('hex')); 
+// => 04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495
+
+var keyCompressed = ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true);
+
+console.log(key.publickey.toString('hex')); 
+// => 03d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6f
+```
 
 
 
 
-#### compressed
-
-Get/set whether the point on the curve is compressed. Affects the output of the WIF (wallet import format) and the address.
 
 
 
