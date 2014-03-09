@@ -47,6 +47,9 @@ describe('ECKey', function() {
     describe('> when compressed is true', function() {
       var key = new ECKey(null, true);
       T (key.compressed);
+
+      var key2 = new ECKey(secureRandom(32), true);
+      T (key2.compressed);
     })
   })
 
@@ -63,15 +66,21 @@ describe('ECKey', function() {
       it('should return the 65 byte public key', function() {
         var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
         var publicKeyHex = "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495";
-        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}));
-      
+        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}), false);
+        EQ (key.publicKey.length, 65);
         EQ (key.publicKey.toString('hex'), publicKeyHex);
       })
     })
 
     describe('> when compressed', function() {
       it('should return the 33 byte public key', function() {
-        
+        var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+        var publicKeyHex = "03d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6f";
+        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}), true);
+
+        T (key.compressed);
+        EQ (key.publicKey.length, 33);
+        EQ (key.publicKey.toString('hex'), publicKeyHex);
       })
     })
   })
