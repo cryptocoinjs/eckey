@@ -164,7 +164,7 @@ References
 - http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript
 - https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/eckey.js
 - https://github.com/vbuterin/bitcoinjs-lib/blob/master/src/eckey.js
-- 
+
 
 
 
