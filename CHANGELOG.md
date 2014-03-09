@@ -5,6 +5,7 @@ next release / 2014-02-??
 * Changed the way the constuctor works. Only supports input types of `Array`, `Buffer`, or `Uint8Array`. Does NOT randomly generate a private key anymore.
 * added `publicKey` property
 * added `pubKeyHash`/`publicHash` property
+* added `publicPoint`, removed `getPubPoint()`
 
 0.3.0 / 2014-02-03
 ------------------

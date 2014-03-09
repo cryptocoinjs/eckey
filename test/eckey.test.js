@@ -107,6 +107,14 @@ describe('ECKey', function() {
     })
   })
 
+  describe('- publicPoint', function() {
+    it('should return the point object', function() {
+      var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+      var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}), false);
+      T (key.publicPoint);
+    })
+  })
+
 
   describe('- getPub()', function() {
     describe('> when not compressed', function() {

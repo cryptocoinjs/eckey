@@ -88,7 +88,7 @@ console.log(key.publickey.toString('hex'));
 ```
 
 
-### publicHash
+#### publicHash
 
 Alias: `pubKeyHash`
 
@@ -108,6 +108,12 @@ var keyCompressed = ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true)
 console.log(key.publicHash.toString('hex')) // => a1c2f92a9dacbd2991c3897724a93f338e44bdc1
 console.log(key.publKeyHash.toString('hex')) // => a1c2f92a9dacbd2991c3897724a93f338e44bdc1
 ```
+
+
+#### publicPoint
+
+Get the [Public Key Point](https://github.com/cryptocoinjs/ecurve/blob/master/lib/ecurve.js) on the Ellipitical Curve. 
+
 
 
 
