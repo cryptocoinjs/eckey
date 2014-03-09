@@ -2,6 +2,20 @@ next release / 2014-02-??
 ------------------
 * Dropped sha256 and ripemd160 deps. Upgraded to crypto-hashing library.
 * removed function wrapper
+* Changed the way the constuctor works. Only supports input types of `Array`, `Buffer`, or `Uint8Array`. Does NOT randomly generate a private key anymore.
+* added `publicKey` property
+* added `pubKeyHash`/`publicHash` property
+* added `publicPoint`, removed `getPubPoint()`
+* removed `getPub()`, use `publicKey` instead
+* removed `getPubKeyHash()`, use `publicHash` or `pubKeyHash` instead
+* removed `sign()` and `verify()`, methods can be accessed from [ecdsa](https://github.com/cryptocoinjs/ecdsa)
+* added `privateExportKey` 
+* removed `getExportedPrivateKey`, note that `getExportedPrivateKey` was essentially just a way to get WIF
+* removed `decodeString()`, use package [coinstring][coinstring] in its place
+* removed `getBitcoinAddress()`, use package [coinstring][coinstring] in its place
+* removed `setCompressed`, use `compressed` property instead
+* removed deps: `ecdsa`, `convert-hex`, `btc-address`, `bs58`
+* updated deps: `ecurve` and `ecurve-names`
 
 0.3.0 / 2014-02-03
 ------------------
@@ -31,3 +45,5 @@ next release / 2014-02-??
 0.0.1 / 2013-11-12
 ------------------
 * initial release
+
+[coinstring]: https://github.com/cryptocoinjs/coinstring

@@ -15,7 +15,9 @@
   ],
   "devDependencies": {
     "mocha": "1.*",
-    "terst": "0.0.1"
+    "terst": "~0.1.0",
+    "binstring": "~0.2.0",
+    "secure-random": "~0.2.0"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/eckey",
@@ -23,13 +25,9 @@
   },
   "main": "./lib/eckey.js",
   "dependencies": {
-    "ecurve": "0.2.x",
-    "ecurve-names": "0.2.x",
-    "convert-hex": "0.1.x",
-    "btc-address": "0.2.x",
-    "ecdsa": "0.3.x",
+    "ecurve": "~0.3.0",
+    "ecurve-names": "~0.3.0",
     "bigi": "0.2.x",
-    "bs58": "0.2.x",
     "crypto-hashing": "~0.2.0"
   }
 }
