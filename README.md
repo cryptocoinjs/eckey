@@ -67,6 +67,34 @@ console.log(key.privatekey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d
 ```
 
 
+### privateExportKey
+
+Get the private key along with a byte for compression if `compressed` is true. i.e.
+
+    if compressed
+      privateExportKey = privateKey + 0x01
+    else
+      privateExportKey = privateKey
+
+This is useful inconjunction with the package [coinstring](https://github.com/cryptocoinjs/coinstring) to generate
+[Wallet Import Format](https://en.bitcoin.it/wiki/Wallet_import_format) keys.
+
+```js
+var ECKey = require('eckey');
+var conv = require('binstring');
+
+var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+
+var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), false);
+console.log(key.privateExportKey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd
+
+var keyCompressed = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true);
+
+//notice the extra "01" at the end?
+console.log(key.privateExportKey.toString('hex')); // => 1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd01
+```
+
+
 #### publicKey
 
 Get the public key. The type is `Buffer`.

@@ -8,6 +8,8 @@ next release / 2014-02-??
 * added `publicPoint`, removed `getPubPoint()`
 * removed `getPub()`, use `publicKey` instead
 * removed `getPubKeyHash()`, use `publicHash` or `pubKeyHash` instead
+* removed `sign()` and `verify()`, methods can be accessed from [ecdsa](https://github.com/cryptocoinjs/ecdsa)
+* added `privateExportKey` 
 
 0.3.0 / 2014-02-03
 ------------------
