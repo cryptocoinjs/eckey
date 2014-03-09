@@ -135,28 +135,6 @@ describe('ECKey', function() {
   })
 
 
-  describe('- getBitcoinAddress()', function() {
-    describe('> when not compressed', function() {
-      it('should generate the address of the uncompressed public key', function() {
-        var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
-        var eckey = new ECKey(privateKeyBytes)
-        var address = eckey.getAddress().toString()
-        EQ (address, "16UjcYNBG9GTK4uq2f7yYEbuifqCzoLMGS")
-      })
-    })
-
-    describe('> when compressed', function() {
-      it('should generate the address of the compressed public key', function() {
-         var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
-        var eckey = new ECKey(privateKeyBytes)
-        eckey.compressed = true
-        var address = eckey.getAddress().toString()
-        EQ (address, "1FkKMsKNJqWSDvTvETqcCeHcUQQ64kSC6s")
-      })
-    })
-  })
-
-
   describe('- toString()', function() {
     it('should show the string representation in...', function() {
       var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
@@ -166,30 +144,6 @@ describe('ECKey', function() {
     })
   })
 
-  describe('- decodeString()', function() {
-    describe('> when private key is uncompressed', function() {
-      it('should throw an error if checksum of uncompressed key is bad', function() {
-        assert.throws(function() {
-          var eckey = new ECKey('5HwoXVkHoRM8sL2KmNRS217n1g8mPPBomrY7yehCuXC111kLqaW');
-        }, function(err) {
-          if (/Checksum validation failed/.test(err)) {
-            return true
-          }
-        });
-      });
-    })
 
-    describe('> when private key is uncompressed', function() {
-      it('should throw an error if checksum of compressed key is bad', function() {
-        assert.throws(function() {
-          var eckey = new ECKey('KwntMbt59tTsj8xqpqYqRRWufyjGunvhSyeMo3NTYpFYzZeDYahL');
-        }, function(err) {
-          if (/Checksum validation failed/.test(err)) {
-            return true
-          }
-        });
-      });
-    });
-  });
 
 });
