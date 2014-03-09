@@ -14,6 +14,7 @@ next release / 2014-02-??
 * removed `decodeString()`, use package [coinstring][coinstring] in its place
 * removed `getBitcoinAddress()`, use package [coinstring][coinstring] in its place
 * removed `setCompressed`, use `compressed` property instead
+* removed deps: `ecdsa`, `convert-hex`, `btc-address`, `bs58`
 
 0.3.0 / 2014-02-03
 ------------------
