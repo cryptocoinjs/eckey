@@ -50,6 +50,32 @@ describe('ECKey', function() {
     })
   })
 
+  describe('- privateKey', function() {
+    it('should return the private key', function() {
+      var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+      var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}));
+      EQ (key.privateKey.toString('hex'), privateKeyHex);
+    })
+  })
+
+  describe('- publicKey', function() {
+    describe('> when not compressed', function() {
+      it('should return the 65 byte public key', function() {
+        var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
+        var publicKeyHex = "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495";
+        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}));
+      
+        EQ (key.publicKey.toString('hex'), publicKeyHex);
+      })
+    })
+
+    describe('> when compressed', function() {
+      it('should return the 33 byte public key', function() {
+        
+      })
+    })
+  })
+
 
   describe('- getPub()', function() {
     describe('> when not compressed', function() {
