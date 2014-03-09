@@ -15,6 +15,7 @@ next release / 2014-02-??
 * removed `getBitcoinAddress()`, use package [coinstring][coinstring] in its place
 * removed `setCompressed`, use `compressed` property instead
 * removed deps: `ecdsa`, `convert-hex`, `btc-address`, `bs58`
+* updated deps: `ecurve` and `ecurve-names`
 
 0.3.0 / 2014-02-03
 ------------------
