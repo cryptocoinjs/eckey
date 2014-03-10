@@ -1,4 +1,4 @@
-next release / 2014-03-09
+0.4.0 / 2014-03-09
 ------------------
 * Dropped sha256 and ripemd160 deps. Upgraded to crypto-hashing library.
 * removed function wrapper
