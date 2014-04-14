@@ -22,6 +22,15 @@ describe('ECKey', function() {
       })
     })
 
+    describe('> when new isnt used', function() {
+      it('should create a new ECKey', function() {
+        var bytes = secureRandom(32);
+        var buf = new Buffer(bytes);
+        var key = ECKey(buf);
+        EQ (key.privateKey.toString('hex'), buf.toString('hex'));
+      })
+    })
+
     describe('> when input is an Uint8Array', function() {
       it('should create a new ECKey ', function() {
         var bytes = secureRandom(32);

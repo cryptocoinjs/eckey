@@ -1,3 +1,8 @@
+0.4.1 / 2014-04-14
+------------------
+* bugfix: fixed input when `new` isn't used with the constructor. #11, #9
+
+
 0.4.0 / 2014-03-09
 ------------------
 * Dropped sha256 and ripemd160 deps. Upgraded to crypto-hashing library.
