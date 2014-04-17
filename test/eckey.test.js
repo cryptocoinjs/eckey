@@ -28,6 +28,12 @@ describe('ECKey', function() {
         var buf = new Buffer(bytes);
         var key = ECKey(buf);
         EQ (key.privateKey.toString('hex'), buf.toString('hex'));
+
+        key = ECKey(buf, true);
+        T (key.compressed);
+
+        key = ECKey(buf, false);
+        F (key.compressed);
       })
     })
 
