@@ -1,7 +1,10 @@
+0.4.2 / 2014-04-17
+------------------
+* bugfix: fixed `compressed` when `new` isn't used with the constructor. #12
+
 0.4.1 / 2014-04-14
 ------------------
 * bugfix: fixed input when `new` isn't used with the constructor. #11, #9
-
 
 0.4.0 / 2014-03-09
 ------------------
