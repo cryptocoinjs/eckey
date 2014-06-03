@@ -1,3 +1,8 @@
+0.5.0 / 2014-06-03
+------------------
+* add TravisCI
+* add Coveralls
+
 0.4.2 / 2014-04-17
 ------------------
 * bugfix: fixed `compressed` when `new` isn't used with the constructor. #12
