@@ -14,7 +14,7 @@
     "signing"
   ],
   "devDependencies": {
-    "mocha": "1.*",
+    "mocha": "^1.20.0",
     "terst": "~0.1.0",
     "binstring": "~0.2.0",
     "secure-random": "~0.2.0",
