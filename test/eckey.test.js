@@ -1,5 +1,4 @@
 var ECKey = require('../')
-var conv = require('binstring') 
 var secureRandom = require('secure-random')
 
 require('terst')
@@ -11,7 +10,7 @@ describe('ECKey', function() {
       it('should create a new ECKey ', function() {
         var buf = secureRandom(32, {type: 'Buffer'});
         var key = new ECKey(buf);
-        EQ (key.privateKey.toString('hex'), conv(buf, {out: 'hex'}));
+        EQ (key.privateKey.toString('hex'), buf.toString('hex'));
         EQ (key.compressed, false);
       })
     })
@@ -37,7 +36,7 @@ describe('ECKey', function() {
         T (bytes instanceof Uint8Array);
 
         var key = new ECKey(bytes);
-        EQ (key.privateKey.toString('hex'), conv([].slice.call(bytes), {out: 'hex'}));
+        EQ (key.privateKey.toString('hex'), new Buffer(bytes).toString('hex'));
         EQ (key.compressed, false);
       })
     })
@@ -48,7 +47,7 @@ describe('ECKey', function() {
         T (Array.isArray(bytes));
 
         var key = new ECKey(bytes);
-        EQ (key.privateKey.toString('hex'), conv(bytes, {out: 'hex'}));
+        EQ (key.privateKey.toString('hex'), new Buffer(bytes).toString('hex'));
         EQ (key.compressed, false);
       })
     })
@@ -65,7 +64,7 @@ describe('ECKey', function() {
   describe('- privateKey', function() {
     it('should return the private key', function() {
       var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
-      var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}));
+      var key = new ECKey([].slice.call(new Buffer(privateKeyHex, 'hex')));
       EQ (key.privateKey.toString('hex'), privateKeyHex);
     })
   })
@@ -74,7 +73,7 @@ describe('ECKey', function() {
     describe('> when not compressed', function() {
       it('should return the private key', function() {
         var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
-        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), false);
+        var key = new ECKey(new Buffer(privateKeyHex, 'hex'), false);
         EQ (key.privateExportKey.toString('hex'), privateKeyHex);
       })
     })
@@ -82,7 +81,7 @@ describe('ECKey', function() {
     describe('> when compressed', function() {
       it('should return the private key', function() {
         var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
-        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'buffer'}), true);
+        var key = new ECKey(new Buffer(privateKeyHex, 'hex'), true);
         EQ (key.compressed, true);
         EQ (key.privateExportKey.toString('hex'), privateKeyHex + "01");
       })
@@ -94,7 +93,7 @@ describe('ECKey', function() {
       it('should return the 65 byte public key', function() {
         var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
         var publicKeyHex = "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495";
-        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}), false);
+        var key = new ECKey([].slice.call(new Buffer(privateKeyHex, 'hex')), false);
         EQ (key.publicKey.length, 65);
         EQ (key.publicKey.toString('hex'), publicKeyHex);
       })
@@ -104,7 +103,7 @@ describe('ECKey', function() {
       it('should return the 33 byte public key', function() {
         var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
         var publicKeyHex = "03d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6f";
-        var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}), true);
+        var key = new ECKey([].slice.call(new Buffer(privateKeyHex, 'hex')), true);
 
         T (key.compressed);
         EQ (key.publicKey.length, 33);
@@ -116,7 +115,7 @@ describe('ECKey', function() {
   describe('- publicPoint', function() {
     it('should return the point object', function() {
       var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
-      var key = new ECKey(conv(privateKeyHex, {in: 'hex', out: 'bytes'}), false);
+      var key = new ECKey([].slice.call(new Buffer(privateKeyHex, 'hex')), false);
       T (key.publicPoint);
     })
   })
@@ -124,7 +123,7 @@ describe('ECKey', function() {
 
   describe('- toString()', function() {
     it('should show the string representation in...', function() {
-      var privateKeyBytes = conv("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", {in: 'hex', out: 'bytes'})
+      var privateKeyBytes = [].slice.call(new Buffer("1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD", 'hex'))
       var eckey = new ECKey(privateKeyBytes)
       var s = eckey.toString()
       EQ (s, '1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd')
