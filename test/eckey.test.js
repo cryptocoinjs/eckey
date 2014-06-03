@@ -1,30 +1,24 @@
-var ECKey = require('../lib/eckey')
+var ECKey = require('../')
 var conv = require('binstring') 
 var secureRandom = require('secure-random')
 
 require('terst')
-var assert = require('assert')
+
 
 describe('ECKey', function() {
   describe('+ ECKey()', function() {
     describe('> when input is a Buffer', function() {
       it('should create a new ECKey ', function() {
-        var bytes = secureRandom(32);
-        T (bytes instanceof Uint8Array);
-        F (Array.isArray(bytes));
-        bytes = [].slice.call(bytes);
-        T (Array.isArray(bytes));
-        var buf = new Buffer(bytes);
-
+        var buf = secureRandom(32, {type: 'Buffer'});
         var key = new ECKey(buf);
-        EQ (key.privateKey.toString('hex'), conv(bytes, {out: 'hex'}));
+        EQ (key.privateKey.toString('hex'), conv(buf, {out: 'hex'}));
         EQ (key.compressed, false);
       })
     })
 
     describe('> when new isnt used', function() {
       it('should create a new ECKey', function() {
-        var bytes = secureRandom(32);
+        var bytes = secureRandom(32, {type: 'Buffer'});
         var buf = new Buffer(bytes);
         var key = ECKey(buf);
         EQ (key.privateKey.toString('hex'), buf.toString('hex'));
@@ -39,7 +33,7 @@ describe('ECKey', function() {
 
     describe('> when input is an Uint8Array', function() {
       it('should create a new ECKey ', function() {
-        var bytes = secureRandom(32);
+        var bytes = secureRandom(32, {type: 'Uint8Array'});
         T (bytes instanceof Uint8Array);
 
         var key = new ECKey(bytes);
@@ -50,7 +44,7 @@ describe('ECKey', function() {
 
     describe('> when input is an Array', function() {
       it('should create a new ECKey ', function() {
-        var bytes = secureRandom(32, {array: true});
+        var bytes = secureRandom(32, {type: 'Array'});
         T (Array.isArray(bytes));
 
         var key = new ECKey(bytes);

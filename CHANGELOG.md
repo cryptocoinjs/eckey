@@ -2,6 +2,7 @@
 ------------------
 * add TravisCI
 * add Coveralls
+* upgraded `secure-random@~0.2.1` to `secure-random@^1.0.0` dev dep
 
 0.4.2 / 2014-04-17
 ------------------
