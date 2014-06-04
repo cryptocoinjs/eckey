@@ -1,5 +1,6 @@
 var ECKey = require('../')
 var secureRandom = require('secure-random')
+var S = require('string')
 
 require('terst')
 
@@ -58,6 +59,38 @@ describe('ECKey', function() {
 
       var key2 = new ECKey(secureRandom(32), true);
       T (key2.compressed);
+    })
+  })
+
+  describe('- compressed', function() {
+    describe('> when false to true', function() {
+      it('should change privateExportKey and all other affected fields', function() {
+        var privateKey = new Buffer("1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd", 'hex')
+        var key = new ECKey(privateKey, false)
+        F (key.compressed)
+        var pubKey = key.publicKey
+        F (S(key.privateExportKey.toString('hex')).endsWith('01'))
+
+        key.compressed = true
+
+        NEQ (pubKey.toString('hex'), key.publicKey.toString('hex'))
+        T (S(key.privateExportKey.toString('hex')).endsWith('01'))
+      })
+    })
+
+    describe('> when true to false', function() {
+      it('should change privateExportKey and all other affected fields', function() {
+        var privateKey = new Buffer("1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd", 'hex')
+        var key = new ECKey(privateKey, true)
+        T (key.compressed)
+        var pubKey = key.publicKey
+        T (S(key.privateExportKey.toString('hex')).endsWith('01'))
+
+        key.compressed = false
+
+        NEQ (pubKey.toString('hex'), key.publicKey.toString('hex'))
+        F (S(key.privateExportKey.toString('hex')).endsWith('01'))
+      })
     })
   })
 

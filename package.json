@@ -20,7 +20,8 @@
     "mochify": "~0.4.2",
     "coveralls": "^2.10.0",
     "mocha-lcov-reporter": "0.0.1",
-    "istanbul": "^0.2.10"
+    "istanbul": "^0.2.10",
+    "string": "^1.8.1"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/eckey",
