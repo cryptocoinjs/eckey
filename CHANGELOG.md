@@ -9,6 +9,7 @@
 * field `compressed` is now set to `true` by default
 * upgraded `terst` dev dep to `0.2.0`
 * upgraded `bigi@~0.2.0` to `bigi@^1.1.0`
+* add testling
 
 0.4.2 / 2014-04-17
 ------------------
