@@ -1,3 +1,16 @@
+0.5.0 / 2014-06-03
+------------------
+* add TravisCI
+* add Coveralls
+* upgraded `secure-random@~0.2.1` to `secure-random@^1.0.0` dev dep
+* removed `ecurve-names` dep, functionality is now present in `ecurve`
+* upgraded from `ecurve@~0.3.x` to `ecurve@^0.6.0`
+* removed static field `compressByDefault`
+* field `compressed` is now set to `true` by default
+* upgraded `terst` dev dep to `0.2.0`
+* upgraded `bigi@~0.2.0` to `bigi@^1.1.0`
+* add testling
+
 0.4.2 / 2014-04-17
 ------------------
 * bugfix: fixed `compressed` when `new` isn't used with the constructor. #12
