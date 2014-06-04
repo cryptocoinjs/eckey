@@ -60,6 +60,18 @@ describe('ECKey', function() {
       var key2 = new ECKey(secureRandom(32), true);
       T (key2.compressed);
     })
+
+    describe('> when bad data type', function() {
+      it('should throw an error', function() {
+        var data = new Uint16Array(16)
+          
+        var err = THROWS(function() {
+          var key = new ECKey(data)  
+        })
+        
+        T (err.message.match(/invalid type/i))
+      })
+    })
   })
 
   describe('- compressed', function() {
