@@ -7,6 +7,7 @@
 * upgraded from `ecurve@~0.3.x` to `ecurve@^0.6.0`
 * removed static field `compressByDefault`
 * field `compressed` is now set to `true` by default
+* upgraded `terst` dev dep to `0.2.0`
 
 0.4.2 / 2014-04-17
 ------------------

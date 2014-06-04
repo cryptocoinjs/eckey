@@ -67,6 +67,17 @@ describe('ECKey', function() {
       var key = new ECKey([].slice.call(new Buffer(privateKeyHex, 'hex')));
       EQ (key.privateKey.toString('hex'), privateKeyHex);
     })
+
+    describe('> when length is not 32', function() {
+      var key = new ECKey()
+      it('should throw an error', function() {
+        var err = THROWS (function() {
+          key.privateKey = new Buffer('ff33', 'hex')
+        })
+
+        T (err.message.match(/length of 32/))
+      })
+    })
   })
 
   describe('- privateExportKey', function() {
