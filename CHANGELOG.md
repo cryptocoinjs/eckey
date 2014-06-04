@@ -5,6 +5,8 @@
 * upgraded `secure-random@~0.2.1` to `secure-random@^1.0.0` dev dep
 * removed `ecurve-names` dep, functionality is now present in `ecurve`
 * upgraded from `ecurve@~0.3.x` to `ecurve@^0.6.0`
+* removed static field `compressByDefault`
+* 
 
 0.4.2 / 2014-04-17
 ------------------
