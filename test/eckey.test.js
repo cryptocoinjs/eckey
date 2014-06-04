@@ -11,7 +11,7 @@ describe('ECKey', function() {
         var buf = secureRandom(32, {type: 'Buffer'});
         var key = new ECKey(buf);
         EQ (key.privateKey.toString('hex'), buf.toString('hex'));
-        EQ (key.compressed, false);
+        EQ (key.compressed, true);
       })
     })
 
@@ -37,7 +37,7 @@ describe('ECKey', function() {
 
         var key = new ECKey(bytes);
         EQ (key.privateKey.toString('hex'), new Buffer(bytes).toString('hex'));
-        EQ (key.compressed, false);
+        EQ (key.compressed, true);
       })
     })
 
@@ -48,7 +48,7 @@ describe('ECKey', function() {
 
         var key = new ECKey(bytes);
         EQ (key.privateKey.toString('hex'), new Buffer(bytes).toString('hex'));
-        EQ (key.compressed, false);
+        EQ (key.compressed, true);
       })
     })
 

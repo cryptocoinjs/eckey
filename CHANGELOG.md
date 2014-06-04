@@ -6,7 +6,7 @@
 * removed `ecurve-names` dep, functionality is now present in `ecurve`
 * upgraded from `ecurve@~0.3.x` to `ecurve@^0.6.0`
 * removed static field `compressByDefault`
-* 
+* field `compressed` is now set to `true` by default
 
 0.4.2 / 2014-04-17
 ------------------
