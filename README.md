@@ -9,6 +9,7 @@ eckey
 
 JavaScript component to handle private key and public keys associated with elliptic curve cryptography. Used with crypto currencies such as Bitcoin, Litecoin, Dogecoin, etc. Works in both Node.js and the browser.
 
+
 Official documenation:
 
 http://cryptocoinjs.com/modules/currency/eckey/
