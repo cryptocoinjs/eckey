@@ -1,6 +1,7 @@
 0.6.0 / 2014-06-03
 ------------------
 * added field `pubKeyHash` and alias `publicHash`
+* removed semicolons (CryptoCoinJS should no longer use them)
 
 0.5.0 / 2014-06-03
 ------------------
