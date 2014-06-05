@@ -168,6 +168,17 @@ describe('ECKey', function() {
     })
   })
 
+  describe('- publicHash', function() {
+    it('should return the hash 160 of public key', function() {
+      var key = new ECKey(new Buffer('1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd', 'hex'), false)
+      EQ (key.publicHash.toString('hex'), "3c176e659bea0f29a3e9bf7880c112b1b31b4dc8")
+      EQ (key.pubKeyHash.toString('hex'), "3c176e659bea0f29a3e9bf7880c112b1b31b4dc8")
+      key.compressed = true
+      EQ (key.publicHash.toString('hex'), "a1c2f92a9dacbd2991c3897724a93f338e44bdc1")
+      EQ (key.pubKeyHash.toString('hex'), "a1c2f92a9dacbd2991c3897724a93f338e44bdc1")
+    })
+  })
+
   describe('- publicPoint', function() {
     it('should return the point object', function() {
       var privateKeyHex = "1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd";
@@ -185,7 +196,4 @@ describe('ECKey', function() {
       EQ (s, '1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd')
     })
   })
-
-
-
-});
+})

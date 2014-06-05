@@ -1,3 +1,7 @@
+0.6.0 / 2014-06-03
+------------------
+* added field `pubKeyHash` and alias `publicHash`
+
 0.5.0 / 2014-06-03
 ------------------
 * add TravisCI
