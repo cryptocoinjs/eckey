@@ -30,7 +30,7 @@
   },
   "main": "./lib/eckey.js",
   "dependencies": {
-    "ecurve": "^0.6.0",
+    "ecurve": "^0.8.0",
     "bigi": "^1.1.0"
   },
   "browser": {

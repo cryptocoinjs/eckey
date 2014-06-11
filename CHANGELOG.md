@@ -1,3 +1,8 @@
+0.7.0 / 2014-06-11
+------------------
+* updated `"ecurve": "^0.6.0"` to `"ecurve": "^0.8.0"`
+* 
+
 0.6.0 / 2014-06-03
 ------------------
 * added field `pubKeyHash` and alias `publicHash`
