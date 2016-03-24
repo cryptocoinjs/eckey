@@ -174,14 +174,6 @@ describe('ECKey', function () {
     })
   })
 
-  describe('- publicPoint', function () {
-    it('should return the point object', function () {
-      var privateKeyHex = '1184cd2cdd640ca42cfc3a091c51d549b2f016d454b2774019c2b2d2e08529fd'
-      var key = new ECKey([].slice.call(new Buffer(privateKeyHex, 'hex')), false)
-      assert(key.publicPoint)
-    })
-  })
-
   describe('- toString()', function () {
     it('should show the string representation in...', function () {
       var privateKeyBytes = [].slice.call(new Buffer('1184CD2CDD640CA42CFC3A091C51D549B2F016D454B2774019C2B2D2E08529FD', 'hex'))
