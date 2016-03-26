@@ -32,8 +32,9 @@
     "secp256k1": "^3.0.1"
   },
   "scripts": {
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+    "lint": "standard",
     "test": "mocha --ui bdd",
-    "unit": "./node_modules/.bin/mocha",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js"
+    "unit": "./node_modules/.bin/mocha"
   }
 }
