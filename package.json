@@ -14,10 +14,10 @@
     "signing"
   ],
   "devDependencies": {
-    "mocha": "^1.20.0",
+    "crypto-browserify": "^3.2.5",
+    "mocha": "2.x",
     "secure-random": "^1.0.0",
     "string": "^1.8.1",
-    "crypto-browserify": "^3.2.5",
     "standard": "6.x"
   },
   "repository": {
