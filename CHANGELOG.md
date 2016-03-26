@@ -1,3 +1,7 @@
+1.0.0 / 2016-03-26
+------------------
+- upgraded to `secp256k1`. [#15][#15]
+
 0.8.0 / 2014-09-29
 ------------------
 - updated `"ecurve": "^0.8.0"` to `"ecurve": "^1.0.0"`
@@ -44,7 +48,7 @@
 * removed `getPub()`, use `publicKey` instead
 * removed `getPubKeyHash()`, use `publicHash` or `pubKeyHash` instead
 * removed `sign()` and `verify()`, methods can be accessed from [ecdsa](https://github.com/cryptocoinjs/ecdsa)
-* added `privateExportKey` 
+* added `privateExportKey`
 * removed `getExportedPrivateKey`, note that `getExportedPrivateKey` was essentially just a way to get WIF
 * removed `decodeString()`, use package [coinstring][coinstring] in its place
 * removed `getBitcoinAddress()`, use package [coinstring][coinstring] in its place
@@ -76,7 +80,7 @@
 
 0.1.0 / 2013-11-20
 ------------------
-* changed package name 
+* changed package name
 * removed AMD support
 
 0.0.1 / 2013-11-12
@@ -84,3 +88,32 @@
 * initial release
 
 [coinstring]: https://github.com/cryptocoinjs/coinstring
+
+<!--- secp256k1 instead ecurve -->
+[#14]: https://github.com/cryptocoinjs/eckey/pull/14
+<!--- Private key [1, n - 1] range -->
+[#13]: https://github.com/cryptocoinjs/eckey/issues/13
+<!--- Pass the `compressed` flag when used without `new` -->
+[#12]: https://github.com/cryptocoinjs/eckey/pull/12
+<!--- Fixed variable name -->
+[#11]: https://github.com/cryptocoinjs/eckey/pull/11
+<!--- Repository description -->
+[#10]: https://github.com/cryptocoinjs/eckey/issues/10
+<!--- Input is undefined -->
+[#9]: https://github.com/cryptocoinjs/eckey/issues/9
+<!--- Retarget for just NodeJS and Browserify -->
+[#8]: https://github.com/cryptocoinjs/eckey/issues/8
+<!--- Transition from convert-hex to binstring -->
+[#7]: https://github.com/cryptocoinjs/eckey/issues/7
+<!--- More explicit setting of testnet / prod net -->
+[#6]: https://github.com/cryptocoinjs/eckey/issues/6
+<!--- Adding checksum checks in ECkey decode strings -->
+[#5]: https://github.com/cryptocoinjs/eckey/pull/5
+<!--- update deps - makes eckey npm installable -->
+[#4]: https://github.com/cryptocoinjs/eckey/pull/4
+<!--- doesn't install: npm ERR! 404 'cryptocoin-base58' is not in the npm registry -->
+[#3]: https://github.com/cryptocoinjs/eckey/issues/3
+<!--- Fixed getExportedPrivateKey() returning uncompressed private key -->
+[#2]: https://github.com/cryptocoinjs/eckey/pull/2
+<!--- fix code typo [bug] -->
+[#1]: https://github.com/cryptocoinjs/eckey/issues/1
