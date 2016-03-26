@@ -1,7 +1,6 @@
 /* global describe, it */
 var assert = require('assert')
 var secureRandom = require('secure-random')
-var S = require('string')
 var ECKey = require('../')
 
 describe('ECKey', function () {
@@ -78,12 +77,12 @@ describe('ECKey', function () {
         var key = new ECKey(privateKey, false)
         assert(!key.compressed)
         var pubKey = key.publicKey
-        assert(!S(key.privateExportKey.toString('hex')).endsWith('01'))
+        assert.notStrictEqual(key.privateExportKey.toString('hex').slice(-2), '01', 'ends with 01')
 
         key.compressed = true
 
         assert.notEqual(pubKey.toString('hex'), key.publicKey.toString('hex'))
-        assert(S(key.privateExportKey.toString('hex')).endsWith('01'))
+        assert.strictEqual(key.privateExportKey.toString('hex').slice(-2), '01', 'ends with 01')
       })
     })
 
@@ -93,12 +92,12 @@ describe('ECKey', function () {
         var key = new ECKey(privateKey, true)
         assert(key.compressed)
         var pubKey = key.publicKey
-        assert(S(key.privateExportKey.toString('hex')).endsWith('01'))
+        assert.strictEqual(key.privateExportKey.toString('hex').slice(-2), '01', 'ends with 01')
 
         key.compressed = false
 
         assert.notEqual(pubKey.toString('hex'), key.publicKey.toString('hex'))
-        assert(!S(key.privateExportKey.toString('hex')).endsWith('01'))
+        assert.notStrictEqual(key.privateExportKey.toString('hex').slice(-2), '01', 'ends with 01')
       })
     })
   })
