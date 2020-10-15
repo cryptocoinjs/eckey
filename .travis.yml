@@ -3,11 +3,9 @@ os:
   - linux
 language: node_js
 node_js:
-  - "0.10"
-  - "0.11"
-  - "0.12"
-  - "4"
-  - "5"
+  - "10"
+  - "12"
+  - "14"
 addons:
   apt:
     sources:
@@ -27,9 +25,9 @@ matrix:
   fast_finish: true
   include:
     - os: linux
-      node_js: "4"
+      node_js: "14"
       env: CXX=g++-4.8 TEST_SUITE=lint
     - os: linux
-      node_js: "4"
+      node_js: "14"
       env: CXX=clang++ TEST_SUITE=unit
 script: npm run $TEST_SUITE
