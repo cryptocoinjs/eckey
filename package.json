@@ -1,6 +1,6 @@
 {
   "name": "eckey",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Handle private key and public keys associated with elliptic curve cryptography. Used with crypto currencies such as Bitcoin, Litecoin, Dogecoin, etc. Works in both Node.js and the browser.",
   "keywords": [
     "cryptography",
